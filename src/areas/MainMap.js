@@ -1,10 +1,21 @@
-import React from 'react'
-import './styles/main-map.css'
+import React from 'react';
+import {connect} from 'react-redux';
+import { BASE, changeArea } from './areasModule';
+import './styles/main-map.css';
 
-const MainMap = () => {
+const MainMap = ({ changeArea }) => {
+  
+  const goToBase = () => {
+    changeArea(BASE);
+  }
+
   return (
-    <div id="background">
-      <div id="base">
+    <div id="main-background">
+      <div 
+        onTouchStart={goToBase}
+        onClick={goToBase}
+        id="base"
+      >
         <h2>Main Base</h2>
       </div>
       <div id="dungeon">
@@ -14,4 +25,6 @@ const MainMap = () => {
   )
 };
 
-export default MainMap;
+export default connect(null, {
+  changeArea
+})(MainMap);
