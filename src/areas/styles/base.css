@@ -21,3 +21,48 @@
   left: 20px;
   top: 30px;
 }
+
+#imprv-cellar {
+  top: 70px;
+  left: 200px;
+  height: 100px;
+  width: 60px;
+  background: red;
+  position: absolute;
+}
+
+#imprv-armory {
+  top: 70px;
+  left: 350px;
+  height: 100px;
+  width: 60px;
+  background: red;
+  position: absolute;
+}
+
+#imprv-treasury {
+  top: 70px;
+  left: 500px;
+  height: 100px;
+  width: 60px;
+  background: red;
+  position: absolute;
+}
+
+#imprv-science {
+  top: 200px;
+  left: 150px;
+  height: 100px;
+  width: 60px;
+  background: red;
+  position: absolute;
+}
+
+#imprv-theives {
+  top: 200px;
+  left: 300px;
+  height: 100px;
+  width: 60px;
+  background: red;
+  position: absolute;
+}

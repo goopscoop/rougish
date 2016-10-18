@@ -5,9 +5,11 @@ import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import promiseMiddleware from 'redux-promise';
 import areas from './areas/areasModule';
+import shop from './UI/shopModule';
 
 const rootReducer = combineReducers({
-  areas
+  areas,
+  shop
 });
 
 const loggerMiddleware = createLogger();
