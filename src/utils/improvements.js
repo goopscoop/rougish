@@ -1,6 +1,8 @@
+import Strings from './strings';
+
 const improvements = [
   {
-    name: 'Treasury',
+    name: Strings.improvements.treasury.treasury,
     code: 'treasury',
     id: 'imprv-treasury',
     isPurchased: false,
@@ -9,7 +11,7 @@ const improvements = [
     },
     upgrades: [
       {
-        label: 'Upgrade Treasury (lvl 1)',
+        label: Strings.improvements.treasury.upgrade1,
         code: 'lvl1',
         isPurchased: false,
         cost: {
@@ -17,7 +19,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Treasury (lvl 2)',
+        label: Strings.improvements.treasury.upgrade2,
         code: 'lvl2',
         isPurchased: false,
         cost: {
@@ -25,7 +27,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Treasury (lvl 3)',
+        label: Strings.improvements.treasury.upgrade3,
         code: 'lvl3',
         isPurchased: false,
         cost: {
@@ -33,7 +35,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Treasury (lvl 4)',
+        label: Strings.improvements.treasury.upgrade4,
         code: 'lvl4',
         isPurchased: false,
         cost: {
@@ -41,17 +43,20 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Treasury (lvl 5)',
+        label: Strings.improvements.treasury.upgrade5,
         code: 'lvl5',
         isPurchased: false,
         cost: {
           gold: 50000
         }
       },
-    ]
+    ],
+    items: {
+      lvl1: ['goldPurse', 'goldDagger']
+    }
   },
   {
-    name: 'Armory',
+    name: Strings.improvements.armory.armory,
     code: 'armory',
     id: 'imprv-armory',
     isPurchased: false,
@@ -61,7 +66,7 @@ const improvements = [
     },
     upgrades: [
       {
-        label: 'Upgrade Armory (lvl 1)',
+        label: Strings.improvements.armory.upgrade1,
         code: 'lvl1',
         isPurchased: false,
         cost: {
@@ -70,7 +75,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Armory (lvl 2)',
+        label: Strings.improvements.armory.upgrade2,
         code: 'lvl2',
         isPurchased: false,
         cost: {
@@ -79,7 +84,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Armory (lvl 3)',
+        label: Strings.improvements.armory.upgrade3,
         code: 'lvl3',
         isPurchased: false,
         cost: {
@@ -88,7 +93,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Armory (lvl 4)',
+        label: Strings.improvements.armory.upgrade4,
         code: 'lvl4',
         isPurchased: false,
         cost: {
@@ -98,7 +103,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Armory (lvl 5)',
+        label: Strings.improvements.armory.upgrade5,
         code: 'lvl5',
         isPurchased: false,
         cost: {
@@ -110,7 +115,7 @@ const improvements = [
     ]
   },
   {
-    name: 'Cellar',
+    name: Strings.improvements.cellar.cellar,
     code: 'cellar',
     id: 'imprv-cellar',
     isPurchased: false,
@@ -120,7 +125,7 @@ const improvements = [
     },
     upgrades: [
       {
-        label: 'Upgrade Cellar (lvl 1)',
+        label: Strings.improvements.cellar.upgrade1,
         code: 'lvl1',
         isPurchased: false,
         cost: {
@@ -130,7 +135,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Cellar (lvl 2)',
+        label: Strings.improvements.cellar.upgrade2,
         code: 'lvl2',
         isPurchased: false,
         cost: {
@@ -140,7 +145,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Cellar (lvl 3)',
+        label: Strings.improvements.cellar.upgrade3,
         code: 'lvl3',
         isPurchased: false,
         cost: {
@@ -150,7 +155,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Cellar (lvl 4)',
+        label: Strings.improvements.cellar.upgrade4,
         code: 'lvl4',
         isPurchased: false,
         cost: {
@@ -161,7 +166,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Cellar (lvl 5)',
+        label: Strings.improvements.cellar.upgrade5,
         code: 'lvl5',
         isPurchased: false,
         cost: {
@@ -174,7 +179,7 @@ const improvements = [
     ]
   },
   {
-    name: 'Theives Guild',
+    name: Strings.improvements.theives.theives,
     code: 'theives',
     id: 'imprv-theives',
     isPurchased: false,
@@ -185,7 +190,7 @@ const improvements = [
     },
     upgrades: [
       {
-        label: 'Upgrade Theives Guild (lvl 1)',
+        label: Strings.improvements.theives.upgrade1,
         code: 'lvl1',
         isPurchased: false,
         cost: {
@@ -196,7 +201,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Theives Guild (lvl 2)',
+        label: Strings.improvements.theives.upgrade2,
         code: 'lvl2',
         isPurchased: false,
         cost: {
@@ -207,7 +212,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Theives Guild (lvl 3)',
+        label: Strings.improvements.theives.upgrade3,
         code: 'lvl3',
         isPurchased: false,
         cost: {
@@ -218,7 +223,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Theives Guild (lvl 4)',
+        label: Strings.improvements.theives.upgrade4,
         code: 'lvl4',
         isPurchased: false,
         cost: {
@@ -229,7 +234,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Theives Guild (lvl 5)',
+        label: Strings.improvements.theives.upgrade5,
         code: 'lvl5',
         isPurchased: false,
         cost: {
@@ -242,7 +247,7 @@ const improvements = [
     ]
   },
   {
-    name: 'Science Lab',
+    name: Strings.improvements.science.science,
     code: 'science',
     id: 'imprv-science',
     isPurchased: false,
@@ -253,7 +258,7 @@ const improvements = [
     },
     upgrades: [
       {
-        label: 'Upgrade Science (lvl 1)',
+        label: Strings.improvements.science.upgrade1,
         code: 'lvl1',
         isPurchased: false,
         cost: {
@@ -263,7 +268,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Science (lvl 2)',
+        label: Strings.improvements.science.upgrade2,
         code: 'lvl2',
         isPurchased: false,
         cost: {
@@ -273,7 +278,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Science (lvl 3)',
+        label: Strings.improvements.science.upgrade3,
         code: 'lvl3',
         isPurchased: false,
         cost: {
@@ -283,7 +288,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Science (lvl 4)',
+        label: Strings.improvements.science.upgrade4,
         code: 'lvl4',
         isPurchased: false,
         cost: {
@@ -293,7 +298,7 @@ const improvements = [
         }
       },
       {
-        label: 'Upgrade Science (lvl 5)',
+        label: Strings.improvements.science.upgrade5,
         code: 'lvl5',
         isPurchased: false,
         cost: {

@@ -108,7 +108,7 @@ const initialState = {
   improvements,
   isShopModalOpen: false,
   isUpgradesModalOpen: false,
-  whichUpgradeIsOpen: null
+  whichImprovementIsOpen: null
 };
 
 export default function shopReducer(state = initialState, action) {
@@ -162,7 +162,7 @@ export default function shopReducer(state = initialState, action) {
       return {
         ...state,
         isUpgradesModalOpen: !state.isUpgradesModalOpen,
-        whichUpgradeIsOpen: action.upgradeCode
+        whichImprovementIsOpen: action.upgradeCode
       };
     default:
       return state;

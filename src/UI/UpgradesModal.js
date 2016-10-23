@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import R from 'ramda';
 import GenerateCost from '../shared/GenerateCost';
+import Strings from '../utils/strings';
 import {connect} from 'react-redux';
 import {
   toggleUpgradesModal,
@@ -12,46 +13,48 @@ const UpgradesModal = ({
   toggleUpgradesModal,
   purchaseUpgrade,
   isUpgradesModalOpen,
-  whichUpgradeIsOpen,
+  whichImprovementIsOpen,
   improvements
 }) => {
-  const generateUpgradesList = () => {
-    const upgrade = R.find(
-      R.propEq('code', whichUpgradeIsOpen)
+  const pickAndRenderNextUpgrade = () => {
+    const improvement = R.find(
+      R.propEq('code', whichImprovementIsOpen)
     )(improvements);
     
     const {
-      code: improvementCode
-    } = upgrade;
+      code: improvementCode,
+      upgrades
+    } = improvement;
 
-    return upgrade.upgrades.map((el, i) => {
-      const { 
-        label,
-        cost,
-        isPurchased,
-        code: upgradeCode
-      } = el;
+    const nextUpgrade = R.find(
+      R.propEq('isPurchased', false)
+    )(upgrades);
 
-      const handleClick = () => {
-        toggleUpgradesModal(null);
-        purchaseUpgrade(improvementCode, upgradeCode);
-      }
-
-      if (isPurchased) {
-        return null;
-      }
-
+    if (!nextUpgrade) {
       return (
-        <div 
-          key={i}
-          className='shop-row'
-          onClick={handleClick}
-        >
-          {label}
-          <GenerateCost cost={cost}/>
-        </div>
-      )
-    })
+        <div>{Strings.common.fullyUpgraded}</div>
+      );
+    }
+
+    const {
+      code: upgradeCode,
+      label,
+      cost
+    } = nextUpgrade;
+
+    const handleClick = () => {
+      toggleUpgradesModal(null);
+      purchaseUpgrade(improvementCode, upgradeCode);
+    }
+
+    return (
+      <div
+        onClick={handleClick}
+      >
+        {label}
+        <GenerateCost cost={cost}/>
+      </div>
+    )
   }
 
   return (
@@ -60,10 +63,21 @@ const UpgradesModal = ({
         onRequestClose={toggleUpgradesModal}
         contentLabel="Modal"
     >
-      <h2>Buy Upgrades</h2>
-      {
-        isUpgradesModalOpen && generateUpgradesList()
-      }
+      <div className='upgrades-top'>
+        <b>
+          {
+            isUpgradesModalOpen && 
+              Strings.improvements[whichImprovementIsOpen].upgrade
+          }
+        </b>
+        {
+          isUpgradesModalOpen && 
+            pickAndRenderNextUpgrade()
+        }
+      </div>
+      <div className='upgrades-shop'>
+
+      </div>
     </Modal>
   );
 }
@@ -71,7 +85,7 @@ const UpgradesModal = ({
 export default connect(
   state => ({
     isUpgradesModalOpen: state.shop.isUpgradesModalOpen,
-    whichUpgradeIsOpen: state.shop.whichUpgradeIsOpen,
+    whichImprovementIsOpen: state.shop.whichImprovementIsOpen,
     improvements: state.shop.improvements
   }),
   {
