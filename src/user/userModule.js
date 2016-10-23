@@ -3,7 +3,7 @@ const REDUCE_RESOURCES = '@user/REDUCE_RESOURCE';
 
 const initialState = {
   resources: {
-    gold: 0,
+    gold: 100000,
     iron: 0,
     gin: 0,
     crystals: 0

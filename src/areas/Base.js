@@ -1,13 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ShopModal from '../UI/Shop';
+import UpgradesModal from '../UI/UpgradesModal';
 import { MAIN_MAP, changeArea } from './areasModule';
-import {toggleShopModal} from '../UI/shopModule';
+import {
+  toggleShopModal,
+  toggleUpgradesModal
+} from '../UI/shopModule';
 import './styles/base.css'
 
 const Base = ({ 
   changeArea,
   toggleShopModal,
+  toggleUpgradesModal,
   improvements
 }) => {
   const goToMain = () => {
@@ -16,9 +21,17 @@ const Base = ({
 
   const renderImprovements = () => {
     return improvements.map((el, i) => {
+      const openUpgradeModal = () => {
+        toggleUpgradesModal(el.code)
+      }
+
       if ( el.isPurchased ) {
         return (
-          <div key={i} id={el.id}>
+          <div
+            key={i}
+            id={el.id}
+            onClick={openUpgradeModal}
+          >
             {el.name}
           </div>
         )
@@ -30,6 +43,7 @@ const Base = ({
   return (
     <div id="base-background">
       <ShopModal />
+      <UpgradesModal />
       <div
         onClick={toggleShopModal}
         id="base-buy-improvements"
@@ -55,5 +69,6 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
   toggleShopModal,
+  toggleUpgradesModal,
   changeArea,
 })(Base);

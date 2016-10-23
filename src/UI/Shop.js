@@ -1,10 +1,11 @@
+import React from 'react';
+import Modal from 'react-modal';
+import { connect } from 'react-redux';
 import { 
   purchaseImprovement,
   toggleShopModal
 } from './shopModule';
-import React from 'react';
-import Modal from 'react-modal';
-import { connect } from 'react-redux';
+import GenerateCost from '../shared/GenerateCost';
 import './styles/shop.css';
 
 const Shop = ({
@@ -16,74 +17,26 @@ const Shop = ({
   const generateImprovementsList = () => {
     return improvementsList.map((el, i) => {
       const { name, isPurchased, cost } = el;
+      
       const handleClick = () => {
         toggleShopModal();
         purchaseImprovement(name);
       }
 
-      const renderCost = () => {
-        const costElements = [];
-
-        if ( cost.gold > 0 ) {
-          costElements.push(
-            <span
-              className='shop-cost'
-              key='gold'
-            >
-              <b>Gold: </b>{cost.gold}
-            </span>
-          );
-        }
-
-        if ( cost.iron > 0 ) {
-          costElements.push(
-            <span
-              className='shop-cost'
-              key='iron'
-            >
-              <b>Iron: </b>{cost.iron}
-            </span>
-          );
-        }
-
-        if ( cost.gin > 0 ) {
-          costElements.push(
-            <span
-              className='shop-cost'
-              key='gin'
-            >
-              <b>Gin: </b>{cost.gin}
-            </span>
-          );
-        }
-
-        if ( cost.crystals > 0 ) {
-          costElements.push(
-            <span
-              className='shop-cost'
-              key='crystals'>
-              <b>Crystals: </b>{cost.crystals}
-            </span>
-          );
-        }
-
-        return <span>{costElements}</span>;
+      if (isPurchased) {
+        return null;
       }
 
-      if (!isPurchased) {
-        return (
-          <div 
-            key={i}
-            onClick={handleClick}
-            className='shop-row'
-          >
-            {name}
-            {renderCost()}
-          </div>
-        );
-      }
-
-      return false;
+      return (
+        <div 
+          key={i}
+          onClick={handleClick}
+          className='shop-row'
+        >
+          {name}
+          <GenerateCost cost={cost} />
+        </div>
+      );
     });
   }
 
