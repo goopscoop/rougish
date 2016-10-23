@@ -1,0 +1,9 @@
+.shop-cost {
+  float: right;
+  position: relative;
+  padding-right: 10px;
+}
+
+.shop-row {
+  padding: 5px 0;
+}

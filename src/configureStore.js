@@ -6,10 +6,12 @@ import createLogger from 'redux-logger';
 import promiseMiddleware from 'redux-promise';
 import areas from './areas/areasModule';
 import shop from './UI/shopModule';
+import user from './user/userModule';
 
 const rootReducer = combineReducers({
   areas,
-  shop
+  shop,
+  user
 });
 
 const loggerMiddleware = createLogger();

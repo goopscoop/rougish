@@ -22,6 +22,7 @@ const Base = ({
           </div>
         )
       }
+      return false;
     })
   }
 
