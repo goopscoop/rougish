@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import R from 'ramda';
 import GenerateCost from '../shared/GenerateCost';
 import Strings from '../utils/strings';
+import Items from '../utils/items';
 import {connect} from 'react-redux';
 import {
   toggleUpgradesModal,
@@ -16,11 +17,14 @@ const UpgradesModal = ({
   whichImprovementIsOpen,
   improvements
 }) => {
+
+  // if modal is open, determin which improvement 
+  // is open
+  const improvement = isUpgradesModalOpen && R.find(
+    R.propEq('code', whichImprovementIsOpen)
+  )(improvements);
+
   const pickAndRenderNextUpgrade = () => {
-    const improvement = R.find(
-      R.propEq('code', whichImprovementIsOpen)
-    )(improvements);
-    
     const {
       code: improvementCode,
       upgrades
@@ -55,6 +59,29 @@ const UpgradesModal = ({
         <GenerateCost cost={cost}/>
       </div>
     )
+  };
+
+  const renderItems = () => {
+    const {currentLvl} = improvement;
+
+    let itemList = [];
+
+    if (currentLvl === 0) {
+      for ( const itemType in Items ) {
+        Items[itemType].lvl1.forEach(el => {
+          if ( el.foundAt.includes(whichImprovementIsOpen)) {
+            itemList.push(el);
+          }
+        });
+      }
+    }
+
+    return itemList.map((el, i) => (
+      <div key={i}>
+        {el.label}
+        <GenerateCost cost={el.cost}/>
+      </div>
+    ))
   }
 
   return (
@@ -76,7 +103,10 @@ const UpgradesModal = ({
         }
       </div>
       <div className='upgrades-shop'>
-
+        {
+          isUpgradesModalOpen &&
+            renderItems()
+        }
       </div>
     </Modal>
   );

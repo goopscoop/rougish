@@ -146,7 +146,8 @@ export default function shopReducer(state = initialState, action) {
               upgrades: mapUpgrades(
                 el.upgrades,
                 action.upgradeCode
-              )
+              ),
+              currentLvl: el.currentLvl + 1
             }
           }
 

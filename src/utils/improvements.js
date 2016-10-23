@@ -9,6 +9,7 @@ const improvements = [
     cost: {
       gold: 100
     },
+    currentLvl: 0,
     upgrades: [
       {
         label: Strings.improvements.treasury.upgrade1,
@@ -51,9 +52,6 @@ const improvements = [
         }
       },
     ],
-    items: {
-      lvl1: ['goldPurse', 'goldDagger']
-    }
   },
   {
     name: Strings.improvements.armory.armory,
@@ -64,6 +62,7 @@ const improvements = [
       gold: 200,
       iron: 50
     },
+    currentLvl: 0,
     upgrades: [
       {
         label: Strings.improvements.armory.upgrade1,
@@ -123,6 +122,7 @@ const improvements = [
       gold: 500,
       gin: 100
     },
+    currentLvl: 0,
     upgrades: [
       {
         label: Strings.improvements.cellar.upgrade1,
@@ -188,6 +188,7 @@ const improvements = [
       gin: 10,
       iron: 30
     },
+    currentLvl: 0,
     upgrades: [
       {
         label: Strings.improvements.theives.upgrade1,
@@ -256,6 +257,7 @@ const improvements = [
       iron: 500,
       crystals: 100
     },
+    currentLvl: 0,
     upgrades: [
       {
         label: Strings.improvements.science.upgrade1,

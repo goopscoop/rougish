@@ -1,50 +1,64 @@
-const items = {
-  weapons: [
-    {
-      label: Strings.improvements.weapons.goldDagger,
-      code: 'goldDagger',
-      description: Strings.improvements.weapons.goldDaggerDesc,
-      cost: {
-        gold: 100
+import Strings from './strings';
+
+const Items = {
+  weapons: {
+    lvl1: [
+      {
+        label: Strings.weapons.goldDagger,
+        code: 'goldDagger',
+        description: Strings.weapons.goldDaggerDesc,
+        foundAt: ['treasury'],
+        cost: {
+          gold: 100
+        },
+        stats: {
+          ATK: 5
+        },
+        effects: {
+          goldPlus: .1
+        },
+        rarity: 'common'
       },
-      stats: {
-        ATK: 5
-      },
-      effects: {
-        goldPlus: .1
+    ]
+  },
+  armor: {
+    lvl1: [
+      {
+        label: Strings.armor.goldVest,
+        code: 'goldVest',
+        description: Strings.armor.goldVestDesc,
+        foundAt: ['treasury'],
+        cost: {
+          gold: 100
+        },
+        stats: {
+          DEF: 5
+        },
+        effects: {
+          goldPlus: .1
+        },
+        rarity: 'common'
       }
-    },
-  ],
-  armor: [
-    {
-      label: Strings.improvements.armor.goldVest,
-      code: 'goldVest',
-      description: Strings.improvements.armor.goldVestDesc,
-      cost: {
-        gold: 100
+    ]
+  },
+  items: {
+    lvl1: [
+      {
+        label: Strings.items.goldPurse,
+        code: 'goldPurse',
+        description: Strings.items.goldPurseDesc,
+        foundAt: ['treasury'],
+        cost: {
+          gold: 100
+        },
+        stats: {},
+        effects: {
+          goldPlus: .1
+        },
+        rarity: 'common'
       },
-      stats: {
-        DEF: 5
-      },
-      effects: {
-        goldPlus: .1
-      }
-    }
-  ],
-  items: [
-    {
-      label: Strings.improvements.items.goldPurse,
-      code: 'goldPurse',
-      description: Strings.improvements.items.goldPurseDesc,
-      cost: {
-        gold: 100
-      },
-      stats: {},
-      effects: {
-        goldPlus: .1
-      }
-    },
-  ]
+    ] 
+  }
 };
 
-export default items;
+export default Items;

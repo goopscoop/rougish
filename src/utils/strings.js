@@ -26,7 +26,7 @@ const Strings = {
       upgrade5: 'Upgrade Armory (lvl 5)',
     },
     cellar: {
-      cellar: 'Cellar'
+      cellar: 'Cellar',
       upgrade: 'Upgrade Cellar',
       upgrade1: 'Upgrade Cellar (lvl 1)',
       upgrade2: 'Upgrade Cellar (lvl 2)',
