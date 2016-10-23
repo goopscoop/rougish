@@ -1,11 +1,10 @@
 const improvements = [
   {
-    name: 'Cellar',
+    name: 'Treasury',
     isPurchased: false,
-    id: 'imprv-cellar',
+    id: 'imprv-treasury',
     cost: {
-      gold: 500,
-      gin: 100
+      gold: 100
     }
   },
   {
@@ -18,11 +17,22 @@ const improvements = [
     }
   },
   {
-    name: 'Treasury',
+    name: 'Cellar',
     isPurchased: false,
-    id: 'imprv-treasury',
+    id: 'imprv-cellar',
     cost: {
-      gold: 100
+      gold: 500,
+      gin: 100
+    }
+  },
+  {
+    name: 'Theives Guild',
+    isPurchased: false,
+    id: 'imprv-theives',
+    cost: {
+      gold: 500,
+      gin: 10,
+      iron: 30
     }
   },
   {
@@ -35,16 +45,6 @@ const improvements = [
       crystals: 100
     }
   },
-  {
-    name: 'Theives Guild',
-    isPurchased: false,
-    id: 'imprv-theives',
-    cost: {
-      gold: 500,
-      gin: 10,
-      iron: 30
-    }
-  }
 ];
 
 export default improvements;

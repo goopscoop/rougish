@@ -1,8 +1,10 @@
+import { 
+  purchaseImprovement,
+  toggleShopModal
+} from './shopModule';
 import React from 'react';
 import Modal from 'react-modal';
 import { connect } from 'react-redux';
-import { toggleShopModal } from '../areas/areasModule';
-import { purchaseImprovement } from './shopModule';
 import './styles/shop.css';
 
 const Shop = ({
@@ -100,7 +102,7 @@ const Shop = ({
 }
 
 const mapStateToProps = state => ({
-  isShopModalOpen: state.areas.isShopModalOpen,
+  isShopModalOpen: state.shop.isShopModalOpen,
   improvementsList: state.shop.improvements
 })
 

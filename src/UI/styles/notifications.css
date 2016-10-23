@@ -1,0 +1,9 @@
+.notifications-body {
+  margin: 20px 15px;
+}
+
+.notifications-footer {
+  position: relative;
+  bottom: 10px;
+  float: right;
+}

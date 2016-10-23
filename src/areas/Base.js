@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ShopModal from '../UI/Shop';
-import { MAIN_MAP, changeArea, toggleShopModal } from './areasModule';
+import { MAIN_MAP, changeArea } from './areasModule';
+import {toggleShopModal} from '../UI/shopModule';
 import './styles/base.css'
 
 const Base = ({ 

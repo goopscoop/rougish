@@ -1,5 +1,4 @@
 const CHANGE_AREA = '@areas/CHANGE_AREA';
-const TOGGLE_SHOP_MODAL = '@areas/TOGGLE_SHOP_MODAL';
 
 // Areas
 
@@ -11,13 +10,8 @@ export const changeArea = (newArea) => ({
   newArea
 });
 
-export const toggleShopModal = () => ({
-  type: TOGGLE_SHOP_MODAL
-})
-
 const initialState = {
   currentArea: MAIN_MAP,
-  isShopModalOpen: false
 };
 
 export default function(state = initialState, action) {
@@ -27,13 +21,6 @@ export default function(state = initialState, action) {
         state,
         {
           currentArea: action.newArea
-        }
-      );
-    case TOGGLE_SHOP_MODAL:
-      return Object.assign({},
-        state,
-        {
-          isShopModalOpen: !state.isShopModalOpen
         }
       );
     default:
