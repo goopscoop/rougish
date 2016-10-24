@@ -66,13 +66,38 @@ const UpgradesModal = ({
 
     let itemList = [];
 
-    if (currentLvl === 0) {
-      for ( const itemType in Items ) {
-        Items[itemType].lvl1.forEach(el => {
-          if ( el.foundAt.includes(whichImprovementIsOpen)) {
-            itemList.push(el);
-          }
-        });
+    for ( const itemType in Items ) {
+      switch (currentLvl) {
+        case 5:
+          Items[itemType].lvl5.forEach(el => {
+            if ( el.foundAt.includes(whichImprovementIsOpen)) {
+              itemList.push(el);
+            }
+          });
+        case 4:
+          Items[itemType].lvl4.forEach(el => {
+            if ( el.foundAt.includes(whichImprovementIsOpen)) {
+              itemList.push(el);
+            }
+          });
+        case 3:
+          Items[itemType].lvl3.forEach(el => {
+            if ( el.foundAt.includes(whichImprovementIsOpen)) {
+              itemList.push(el);
+            }
+          });
+        case 2:
+          Items[itemType].lvl2.forEach(el => {
+            if ( el.foundAt.includes(whichImprovementIsOpen)) {
+              itemList.push(el);
+            }
+          });
+        default: 
+          Items[itemType].lvl1.forEach(el => {
+            if ( el.foundAt.includes(whichImprovementIsOpen)) {
+              itemList.push(el);
+            }
+          });
       }
     }
 
