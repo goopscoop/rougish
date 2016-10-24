@@ -89,7 +89,7 @@ const Strings = {
     metalCage: 'Metal Cage',
     metalCageDesc: 'It\'s not sexy, but it\'s effective',
     titaniumPlateSuit: 'Titanium Plate Suit',
-    metalCageDesc: 'It\'s sexy and effective',
+    titaniumPlateSuitDesc: 'It\'s sexy and effective',
   },
   items: {
     goldPurse: 'Gold Purse',

@@ -1,11 +1,13 @@
 import R from 'ramda';
 import {notifyUser} from './notificationsModule';
-import {reduceResources} from '../user/userModule';
+import {reduceResources, addItemToInventory} from '../user/userModule';
 import Strings from '../utils/strings';
+import Items from '../utils/items';
 import improvements from '../utils/improvements';
 
 const PURCHASE_IMPROVEMENT = '@shop/PURCHASE_IMPROVEMENT';
 const PURCHASE_UPGRADE = '@shop/PURCHASE_UPGRADE';
+const PURCAHSE_ITEM = '@shop/PURCAHSE_ITEM';
 const TOGGLE_SHOP_MODAL = '@shop/TOGGLE_SHOP_MODAL';
 const TOGGLE_UPGRADES_MODAL = '@shop/TOGGLE_UPGRADES_MODAL';
 
@@ -39,19 +41,32 @@ const _compairCostToResources = (cost, resources) => {
   return true;
 }
 
-const _checkResourcesAndPurchase = (dispatch, cost, resources, cb) => {
+const _checkResourcesAndPurchase = (dispatch, cost, resources) => {
   if ( _compairCostToResources(cost, resources) ) {
     dispatch(reduceResources(cost))
-    cb()
+    return Promise.resolve()
   } else {
     dispatch(notifyUser(
       Strings.notifications.notEnoughResources)
     );
-    dispatch(toggleShopModal);
+    return Promise.reject()
+  }
+};
+
+export const purchaseItem = item => {
+  return (dispatch, getState) => {
+    const {
+      user: {
+        resources
+      }
+    } = getState();
+
+    _checkResourcesAndPurchase(dispatch, item.cost, resources)
+      .then(() => dispatch(addItemToInventory(item)));
   }
 }
 
-export const purchaseImprovement = name => {
+export const purchaseImprovement = code => {
   return (dispatch, getState) => {
     const { 
       shop: {
@@ -63,15 +78,14 @@ export const purchaseImprovement = name => {
     } = getState();
 
     const { cost } = R.find(
-      R.propEq('name', name)
+      R.propEq('code', code)
     )(improvements);
 
-    _checkResourcesAndPurchase(dispatch, cost, resources,
-      () => dispatch({
-        type: PURCHASE_IMPROVEMENT,
-        name
-      })
-    );
+    _checkResourcesAndPurchase(dispatch, cost, resources)
+      .then(() => dispatch({
+          type: PURCHASE_IMPROVEMENT,
+          code
+        }));
   };
 };
 
@@ -94,13 +108,12 @@ export const purchaseUpgrade = (improvementCode, upgradeCode) => {
       R.propEq('code', upgradeCode)
     )(upgrades);
 
-    _checkResourcesAndPurchase(dispatch, cost, resources,
-      () => dispatch({
-        type: PURCHASE_UPGRADE,
-        improvementCode,
-        upgradeCode
-      })
-    );
+    _checkResourcesAndPurchase(dispatch, cost, resources)
+      .then(() => dispatch({
+          type: PURCHASE_UPGRADE,
+          improvementCode,
+          upgradeCode
+        }));
   }
 }
 
@@ -117,7 +130,7 @@ export default function shopReducer(state = initialState, action) {
       return {
         ...state,
         improvements: state.improvements.map(el => {
-          if (el.name === action.name){
+          if (el.code === action.code){
             return {...el, isPurchased: true};
           }
 

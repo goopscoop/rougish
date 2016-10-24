@@ -16,11 +16,11 @@ const Shop = ({
 }) => {
   const generateImprovementsList = () => {
     return improvementsList.map((el, i) => {
-      const { name, isPurchased, cost } = el;
+      const { name, isPurchased, cost, code } = el;
       
       const handleClick = () => {
         toggleShopModal();
-        purchaseImprovement(name);
+        purchaseImprovement(code);
       }
 
       if (isPurchased) {

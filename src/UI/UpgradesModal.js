@@ -7,12 +7,14 @@ import Items from '../utils/items';
 import {connect} from 'react-redux';
 import {
   toggleUpgradesModal,
-  purchaseUpgrade
+  purchaseUpgrade,
+  purchaseItem
 } from './shopModule';
 
 const UpgradesModal = ({
   toggleUpgradesModal,
   purchaseUpgrade,
+  purchaseItem,
   isUpgradesModalOpen,
   whichImprovementIsOpen,
   improvements
@@ -64,49 +66,39 @@ const UpgradesModal = ({
   const renderItems = () => {
     const {currentLvl} = improvement;
 
-    let itemList = [];
+    const itemIsAvailable = (foundAt, lvl) => {
+      return foundAt.includes(whichImprovementIsOpen) &&
+        (lvl <= currentLvl);
+    };
 
-    for ( const itemType in Items ) {
-      switch (currentLvl) {
-        case 5:
-          Items[itemType].lvl5.forEach(el => {
-            if ( el.foundAt.includes(whichImprovementIsOpen)) {
-              itemList.push(el);
-            }
-          });
-        case 4:
-          Items[itemType].lvl4.forEach(el => {
-            if ( el.foundAt.includes(whichImprovementIsOpen)) {
-              itemList.push(el);
-            }
-          });
-        case 3:
-          Items[itemType].lvl3.forEach(el => {
-            if ( el.foundAt.includes(whichImprovementIsOpen)) {
-              itemList.push(el);
-            }
-          });
-        case 2:
-          Items[itemType].lvl2.forEach(el => {
-            if ( el.foundAt.includes(whichImprovementIsOpen)) {
-              itemList.push(el);
-            }
-          });
-        default: 
-          Items[itemType].lvl1.forEach(el => {
-            if ( el.foundAt.includes(whichImprovementIsOpen)) {
-              itemList.push(el);
-            }
-          });
+    return Items.map((item, i) => {
+      const { lvl, type, cost, label, foundAt, code } = item;
+      const handleBuyClick = () => {
+        purchaseItem(item);
       }
-    }
 
-    return itemList.map((el, i) => (
-      <div key={i}>
-        {el.label}
-        <GenerateCost cost={el.cost}/>
-      </div>
-    ))
+      if ( itemIsAvailable(foundAt, lvl) ) {
+        return (
+          <div key={i} className='row'>
+            <div className='five columns'>
+            {label}
+            </div>
+            <div className='four columns'>
+              <GenerateCost cost={cost}/>
+            </div>
+            <div className='one column'>
+              <button className="btn-sm">i</button>
+            </div>
+            <div className='one column'>
+              <button
+                className='btn-sm'
+                onClick={handleBuyClick}
+              >$</button>
+            </div>
+          </div>
+        );
+      }
+    }); 
   }
 
   return (
@@ -127,7 +119,8 @@ const UpgradesModal = ({
             pickAndRenderNextUpgrade()
         }
       </div>
-      <div className='upgrades-shop'>
+      <hr />
+      <div>
         {
           isUpgradesModalOpen &&
             renderItems()
@@ -145,6 +138,7 @@ export default connect(
   }),
   {
     toggleUpgradesModal,
-    purchaseUpgrade
+    purchaseUpgrade,
+    purchaseItem
   }
 )(UpgradesModal);
