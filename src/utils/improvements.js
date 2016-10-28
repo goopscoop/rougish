@@ -2,7 +2,7 @@ import Strings from './strings';
 
 const improvements = [
   {
-    name: Strings.improvements.treasury.treasury,
+    name: Strings.improvements.treasury.name,
     code: 'treasury',
     id: 'imprv-treasury',
     isPurchased: false,
@@ -54,7 +54,7 @@ const improvements = [
     ],
   },
   {
-    name: Strings.improvements.armory.armory,
+    name: Strings.improvements.armory.name,
     code: 'armory',
     id: 'imprv-armory',
     isPurchased: false,
@@ -114,7 +114,7 @@ const improvements = [
     ]
   },
   {
-    name: Strings.improvements.cellar.cellar,
+    name: Strings.improvements.cellar.name,
     code: 'cellar',
     id: 'imprv-cellar',
     isPurchased: false,
@@ -179,7 +179,7 @@ const improvements = [
     ]
   },
   {
-    name: Strings.improvements.theives.theives,
+    name: Strings.improvements.theives.name,
     code: 'theives',
     id: 'imprv-theives',
     isPurchased: false,
@@ -248,7 +248,7 @@ const improvements = [
     ]
   },
   {
-    name: Strings.improvements.science.science,
+    name: Strings.improvements.science.name,
     code: 'science',
     id: 'imprv-science',
     isPurchased: false,

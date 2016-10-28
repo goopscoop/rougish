@@ -7,6 +7,7 @@ import store from './configureStore';
 
 // DEV IMPORTS
 import {addResource} from './user/userModule';
+import {__devGetAllImporvements} from './UI/shopModule';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -20,3 +21,4 @@ ReactDOM.render(
 window.__addResource = function(type, amount){
   store.dispatch(addResource(type, amount));
 }
+window.__getAllImprvs = () => store.dispatch(__devGetAllImporvements())

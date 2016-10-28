@@ -1,6 +1,8 @@
 import React from 'react';
 
-const GenerateCost = ({cost}) => {
+const GenerateCost = ({
+  cost = { gold: 0, iron: 0, gin: 0, crystals: 0}
+}) => {
   const costElements = [];
 
   if ( cost.gold > 0 ) {
@@ -9,7 +11,7 @@ const GenerateCost = ({cost}) => {
         className='shop-cost'
         key='gold'
       >
-        <b>Gold: </b>{cost.gold}
+        <b>G: </b>{cost.gold}
       </span>
     );
   }
@@ -20,7 +22,7 @@ const GenerateCost = ({cost}) => {
         className='shop-cost'
         key='iron'
       >
-        <b>Iron: </b>{cost.iron}
+        <b>I: </b>{cost.iron}
       </span>
     );
   }
@@ -41,7 +43,7 @@ const GenerateCost = ({cost}) => {
       <span
         className='shop-cost'
         key='crystals'>
-        <b>Crystals: </b>{cost.crystals}
+        <b>C: </b>{cost.crystals}
       </span>
     );
   }

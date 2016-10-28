@@ -2,19 +2,23 @@ import React from 'react';
 import Modal from 'react-modal';
 import R from 'ramda';
 import GenerateCost from '../shared/GenerateCost';
+import ItemDetails from './ItemDetails';
 import Strings from '../utils/strings';
 import Items from '../utils/items';
 import {connect} from 'react-redux';
 import {
   toggleUpgradesModal,
   purchaseUpgrade,
-  purchaseItem
+  purchaseItem,
+  selectItem
 } from './shopModule';
+import ShinyPurse from './assets/ShinyPurse';
 
 const UpgradesModal = ({
   toggleUpgradesModal,
   purchaseUpgrade,
   purchaseItem,
+  selectItem,
   isUpgradesModalOpen,
   whichImprovementIsOpen,
   improvements
@@ -29,7 +33,8 @@ const UpgradesModal = ({
   const pickAndRenderNextUpgrade = () => {
     const {
       code: improvementCode,
-      upgrades
+      upgrades,
+      currentLvl
     } = improvement;
 
     const nextUpgrade = R.find(
@@ -38,14 +43,12 @@ const UpgradesModal = ({
 
     if (!nextUpgrade) {
       return (
-        <div>{Strings.common.fullyUpgraded}</div>
+        <span>{Strings.common.fullyUpgraded}</span>
       );
     }
 
     const {
       code: upgradeCode,
-      label,
-      cost
     } = nextUpgrade;
 
     const handleClick = () => {
@@ -54,16 +57,16 @@ const UpgradesModal = ({
     }
 
     return (
-      <div
+      <span
         onClick={handleClick}
       >
-        {label}
-        <GenerateCost cost={cost}/>
-      </div>
+        {' '}lvl {currentLvl + 1}{' '}
+        <ShinyPurse height={'25px'} width={'25px'}/>
+      </span>
     )
   };
 
-  const renderItems = () => {
+  const renderItemsList = () => {
     const {currentLvl} = improvement;
 
     const itemIsAvailable = (foundAt, lvl) => {
@@ -72,28 +75,20 @@ const UpgradesModal = ({
     };
 
     return Items.map((item, i) => {
-      const { lvl, type, cost, label, foundAt, code } = item;
-      const handleBuyClick = () => {
-        purchaseItem(item);
+      const { lvl, cost, label, foundAt, } = item;
+      // const handleBuyClick = () => {
+      //   purchaseItem(item);
+      // }
+
+      const handleInspect = () => {
+        selectItem(item)
       }
 
       if ( itemIsAvailable(foundAt, lvl) ) {
         return (
-          <div key={i} className='row'>
+          <div key={i} onClick={handleInspect} className='row'>
             <div className='five columns'>
             {label}
-            </div>
-            <div className='four columns'>
-              <GenerateCost cost={cost}/>
-            </div>
-            <div className='one column'>
-              <button className="btn-sm">i</button>
-            </div>
-            <div className='one column'>
-              <button
-                className='btn-sm'
-                onClick={handleBuyClick}
-              >$</button>
             </div>
           </div>
         );
@@ -108,23 +103,30 @@ const UpgradesModal = ({
         contentLabel="Modal"
     >
       <div className='upgrades-top'>
-        <b>
+        <div className='upgrades-top-inner'>
+          <b className="improvement-name">
+            {
+              isUpgradesModalOpen && 
+                Strings.improvements[whichImprovementIsOpen].name
+            }
+          </b>
           {
             isUpgradesModalOpen && 
-              Strings.improvements[whichImprovementIsOpen].upgrade
+              pickAndRenderNextUpgrade()
           }
-        </b>
-        {
-          isUpgradesModalOpen && 
-            pickAndRenderNextUpgrade()
-        }
+        </div>
       </div>
       <hr />
-      <div>
-        {
-          isUpgradesModalOpen &&
-            renderItems()
-        }
+      <div className='row'>
+        <div className='six columns'>
+          <ItemDetails />
+        </div>
+        <div className='six columns'>
+          {
+            isUpgradesModalOpen &&
+              renderItemsList()
+          }
+        </div>
       </div>
     </Modal>
   );
@@ -139,6 +141,7 @@ export default connect(
   {
     toggleUpgradesModal,
     purchaseUpgrade,
-    purchaseItem
+    purchaseItem,
+    selectItem
   }
 )(UpgradesModal);

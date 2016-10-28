@@ -8,7 +8,7 @@ const Strings = {
   },
   improvements: {
     treasury: {
-      treasury: 'Treasury',
+      name: 'Treasury',
       upgrade: 'Upgrade Treasury',
       upgrade1: 'Upgrade Treasury (lvl 1)',
       upgrade2: 'Upgrade Treasury (lvl 2)',
@@ -17,7 +17,7 @@ const Strings = {
       upgrade5: 'Upgrade Treasury (lvl 5)',
     },
     armory: {
-      armory: 'Armory',
+      name: 'Armory',
       upgrade: 'Upgrade Armory',
       upgrade1: 'Upgrade Armory (lvl 1)',
       upgrade2: 'Upgrade Armory (lvl 2)',
@@ -26,7 +26,7 @@ const Strings = {
       upgrade5: 'Upgrade Armory (lvl 5)',
     },
     cellar: {
-      cellar: 'Cellar',
+      name: 'Cellar',
       upgrade: 'Upgrade Cellar',
       upgrade1: 'Upgrade Cellar (lvl 1)',
       upgrade2: 'Upgrade Cellar (lvl 2)',
@@ -35,7 +35,7 @@ const Strings = {
       upgrade5: 'Upgrade Cellar (lvl 5)',
     },
     theives: {
-      theives: 'Theives Guild',
+      name: 'Theives Guild',
       upgrade: 'Upgrade Theives Guild',
       upgrade1: 'Upgrade Theives Guild (lvl 1)',
       upgrade2: 'Upgrade Theives Guild (lvl 2)',
@@ -44,7 +44,7 @@ const Strings = {
       upgrade5: 'Upgrade Theives Guild (lvl 5)',
     },
     science: {
-      science: 'Science Lab',
+      name: 'Science Lab',
       upgrade: 'Upgrade Science Lab',
       upgrade1: 'Upgrade Science Lab (lvl 1)',
       upgrade2: 'Upgrade Science Lab (lvl 2)',
@@ -121,7 +121,29 @@ const Strings = {
     scotch: 'One Hundred Year Old Scotch',
     scotchDesc: 'A drink so good it increases most stats'
   },
-
+  secondarySkills: {
+    goldPlusDesc: 'Collect gold faster',
+    critPlusDesc: 'More frequent crits',
+    critDefDesc: 'Chance to turn enemy crits into normal attacks',
+    critDamDesc: 'Crits are more powerful',
+    critMinusDesc: 'Less frequen crits',
+    weaponBreakDesc: 'Chance weapon will break',
+    splashDamDesc: 'Damages all enemies',
+    rangedDesc: 'Cannot be countered',
+    twoHandedDesc: 'More powerful, cannot equip shield',
+    dodgePlusDesc: 'Chance to dodge attacks',
+    heavyDesc: 'Your non-ranged ATKs do less damage',
+    protectDesc: 'Chance to block for another companion',
+    vitalProtectDesc: 'Chance to protect companions from deathblow',
+    rarePlusDesc: 'Increase chance to find rare items and secrets',
+    stealDesc: 'Chance to steal resource or item',
+    stealMinusDesc: 'Reduce chance to steal',
+    inspireDesc: 'Chance companions will crit',
+    intimidateDesc: 'Chance enemy will freeze with no action',
+    intimidateDefDesc: 'Cannot be intimidated',
+    poisionPlus: 'Enemy will take poison damage over time',
+    poisonDefDesc: 'Immune to poison'
+  }
 
 }
 

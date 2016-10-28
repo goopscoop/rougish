@@ -11,3 +11,8 @@
 .right {
   float: right;
 }
+
+.upgrades-top {
+  display: flex;
+  justify-content: center;
+}

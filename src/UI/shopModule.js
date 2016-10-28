@@ -2,15 +2,14 @@ import R from 'ramda';
 import {notifyUser} from './notificationsModule';
 import {reduceResources, addItemToInventory} from '../user/userModule';
 import Strings from '../utils/strings';
-import Items from '../utils/items';
 import improvements from '../utils/improvements';
 
 const PURCHASE_IMPROVEMENT = '@shop/PURCHASE_IMPROVEMENT';
 const PURCHASE_UPGRADE = '@shop/PURCHASE_UPGRADE';
-const PURCAHSE_ITEM = '@shop/PURCAHSE_ITEM';
+const SELECT_ITEM = '@shop/SELECT_ITEM';
 const TOGGLE_SHOP_MODAL = '@shop/TOGGLE_SHOP_MODAL';
-const TOGGLE_UPGRADES_MODAL = '@shop/TOGGLE_UPGRADES_MODAL';
 
+const TOGGLE_UPGRADES_MODAL = '@shop/TOGGLE_UPGRADES_MODAL';
 export const toggleShopModal = () => ({
   type: TOGGLE_SHOP_MODAL
 });
@@ -89,6 +88,11 @@ export const purchaseImprovement = code => {
   };
 };
 
+export const selectItem = item => ({
+  type: SELECT_ITEM,
+  item
+});
+
 export const purchaseUpgrade = (improvementCode, upgradeCode) => {
   return (dispatch, getState) => {
     const { 
@@ -121,7 +125,8 @@ const initialState = {
   improvements,
   isShopModalOpen: false,
   isUpgradesModalOpen: false,
-  whichImprovementIsOpen: null
+  whichImprovementIsOpen: null,
+  selectedItem: undefined
 };
 
 export default function shopReducer(state = initialState, action) {
@@ -167,6 +172,11 @@ export default function shopReducer(state = initialState, action) {
           return el;
         })
       };
+    case SELECT_ITEM:
+      return {
+        ...state,
+        selectedItem: action.item
+      }
     case TOGGLE_SHOP_MODAL:
       return {
         ...state,
@@ -180,5 +190,17 @@ export default function shopReducer(state = initialState, action) {
       };
     default:
       return state;
+  }
+}
+
+// DEV ACTIONS
+
+export const __devGetAllImporvements = () => {
+  return dispatch => {
+    dispatch(purchaseImprovement('armory'));
+    dispatch(purchaseImprovement('treasury'));
+    dispatch(purchaseImprovement('science'));
+    dispatch(purchaseImprovement('theives'));
+    dispatch(purchaseImprovement('cellar'));
   }
 }
