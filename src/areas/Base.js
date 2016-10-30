@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import ShopModal from '../UI/Shop';
-import UpgradesModal from '../UI/UpgradesModal';
+import ImprovementShopModal from '../UI/ImprovementShopModal';
+import ItemShopModal from '../UI/ItemShopModal';
 import { MAIN_MAP, changeArea } from './areasModule';
 import {
   toggleShopModal,
@@ -42,8 +42,8 @@ const Base = ({
 
   return (
     <div id="base-background">
-      <ShopModal />
-      <UpgradesModal />
+      <ImprovementShopModal />
+      <ItemShopModal />
       <div
         onClick={toggleShopModal}
         id="base-buy-improvements"

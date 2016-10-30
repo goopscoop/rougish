@@ -1,4 +1,4 @@
-import * as i from 'itemConstructors';
+import * as i from './itemConstructors';
 import Strings from './strings';
 import * as sec from './secondarySkills';
 
@@ -6,84 +6,84 @@ import * as sec from './secondarySkills';
 // 
 // weapons
 const _treasuryWpnLvl1 = (props) => i.foundAtTreasury(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _treasuryWpnLvl2 = (props) => i.foundAtTreasury(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _treasuryWpnLvl3 = (props) => i.foundAtTreasury(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _treasuryWpnLvl4 = (props) => i.foundAtTreasury(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _treasuryWpnLvl5 = (props) => i.foundAtTreasury(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
+const _treasuryWpnLvl2 = (props) => i.foundAtTreasury(i.weapon(i.lvl2(i.rarityCommon(i.item(props)))));
+const _treasuryWpnLvl3 = (props) => i.foundAtTreasury(i.weapon(i.lvl3(i.rarityCommon(i.item(props)))));
+const _treasuryWpnLvl4 = (props) => i.foundAtTreasury(i.weapon(i.lvl4(i.rarityCommon(i.item(props)))));
+const _treasuryWpnLvl5 = (props) => i.foundAtTreasury(i.weapon(i.lvl5(i.rarityCommon(i.item(props)))));
 const _armoryWpnLvl1 = (props) => i.foundAtArmory(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _armoryWpnLvl2 = (props) => i.foundAtArmory(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _armoryWpnLvl3 = (props) => i.foundAtArmory(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _armoryWpnLvl4 = (props) => i.foundAtArmory(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _armoryWpnLvl5 = (props) => i.foundAtArmory(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
+const _armoryWpnLvl2 = (props) => i.foundAtArmory(i.weapon(i.lvl2(i.rarityCommon(i.item(props)))));
+const _armoryWpnLvl3 = (props) => i.foundAtArmory(i.weapon(i.lvl3(i.rarityCommon(i.item(props)))));
+const _armoryWpnLvl4 = (props) => i.foundAtArmory(i.weapon(i.lvl4(i.rarityCommon(i.item(props)))));
+const _armoryWpnLvl5 = (props) => i.foundAtArmory(i.weapon(i.lvl5(i.rarityCommon(i.item(props)))));
 const _cellarWpnLvl1 = (props) => i.foundAtCellar(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _cellarWpnLvl2 = (props) => i.foundAtCellar(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _cellarWpnLvl3 = (props) => i.foundAtCellar(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _cellarWpnLvl4 = (props) => i.foundAtCellar(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _cellarWpnLvl5 = (props) => i.foundAtCellar(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
+const _cellarWpnLvl2 = (props) => i.foundAtCellar(i.weapon(i.lvl2(i.rarityCommon(i.item(props)))));
+const _cellarWpnLvl3 = (props) => i.foundAtCellar(i.weapon(i.lvl3(i.rarityCommon(i.item(props)))));
+const _cellarWpnLvl4 = (props) => i.foundAtCellar(i.weapon(i.lvl4(i.rarityCommon(i.item(props)))));
+const _cellarWpnLvl5 = (props) => i.foundAtCellar(i.weapon(i.lvl5(i.rarityCommon(i.item(props)))));
 const _scienceWpnLvl1 = (props) => i.foundAtScience(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _scienceWpnLvl2 = (props) => i.foundAtScience(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _scienceWpnLvl3 = (props) => i.foundAtScience(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _scienceWpnLvl4 = (props) => i.foundAtScience(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _scienceWpnLvl5 = (props) => i.foundAtScience(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
+const _scienceWpnLvl2 = (props) => i.foundAtScience(i.weapon(i.lvl2(i.rarityCommon(i.item(props)))));
+const _scienceWpnLvl3 = (props) => i.foundAtScience(i.weapon(i.lvl3(i.rarityCommon(i.item(props)))));
+const _scienceWpnLvl4 = (props) => i.foundAtScience(i.weapon(i.lvl4(i.rarityCommon(i.item(props)))));
+const _scienceWpnLvl5 = (props) => i.foundAtScience(i.weapon(i.lvl5(i.rarityCommon(i.item(props)))));
 const _thievesWpnLvl1 = (props) => i.foundAtThieves(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _thievesWpnLvl2 = (props) => i.foundAtThieves(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _thievesWpnLvl3 = (props) => i.foundAtThieves(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _thievesWpnLvl4 = (props) => i.foundAtThieves(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
-const _thievesWpnLvl5 = (props) => i.foundAtThieves(i.weapon(i.lvl1(i.rarityCommon(i.item(props)))));
+const _thievesWpnLvl2 = (props) => i.foundAtThieves(i.weapon(i.lvl2(i.rarityCommon(i.item(props)))));
+const _thievesWpnLvl3 = (props) => i.foundAtThieves(i.weapon(i.lvl3(i.rarityCommon(i.item(props)))));
+const _thievesWpnLvl4 = (props) => i.foundAtThieves(i.weapon(i.lvl4(i.rarityCommon(i.item(props)))));
+const _thievesWpnLvl5 = (props) => i.foundAtThieves(i.weapon(i.lvl5(i.rarityCommon(i.item(props)))));
 
 // aromor
 const _treasuryArmLvl1 = (props) => i.foundAtTreasury(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _treasuryArmLvl2 = (props) => i.foundAtTreasury(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _treasuryArmLvl3 = (props) => i.foundAtTreasury(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _treasuryArmLvl4 = (props) => i.foundAtTreasury(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _treasuryArmLvl5 = (props) => i.foundAtTreasury(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
+const _treasuryArmLvl2 = (props) => i.foundAtTreasury(i.armor(i.lvl2(i.rarityCommon(i.item(props)))));
+const _treasuryArmLvl3 = (props) => i.foundAtTreasury(i.armor(i.lvl3(i.rarityCommon(i.item(props)))));
+const _treasuryArmLvl4 = (props) => i.foundAtTreasury(i.armor(i.lvl4(i.rarityCommon(i.item(props)))));
+const _treasuryArmLvl5 = (props) => i.foundAtTreasury(i.armor(i.lvl5(i.rarityCommon(i.item(props)))));
 const _armoryArmLvl1 = (props) => i.foundAtArmory(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _armoryArmLvl2 = (props) => i.foundAtArmory(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _armoryArmLvl3 = (props) => i.foundAtArmory(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _armoryArmLvl4 = (props) => i.foundAtArmory(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _armoryArmLvl5 = (props) => i.foundAtArmory(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
+const _armoryArmLvl2 = (props) => i.foundAtArmory(i.armor(i.lvl2(i.rarityCommon(i.item(props)))));
+const _armoryArmLvl3 = (props) => i.foundAtArmory(i.armor(i.lvl3(i.rarityCommon(i.item(props)))));
+const _armoryArmLvl4 = (props) => i.foundAtArmory(i.armor(i.lvl4(i.rarityCommon(i.item(props)))));
+const _armoryArmLvl5 = (props) => i.foundAtArmory(i.armor(i.lvl5(i.rarityCommon(i.item(props)))));
 const _cellarArmLvl1 = (props) => i.foundAtCellar(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _cellarArmLvl2 = (props) => i.foundAtCellar(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _cellarArmLvl3 = (props) => i.foundAtCellar(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _cellarArmLvl4 = (props) => i.foundAtCellar(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _cellarArmLvl5 = (props) => i.foundAtCellar(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
+const _cellarArmLvl2 = (props) => i.foundAtCellar(i.armor(i.lvl2(i.rarityCommon(i.item(props)))));
+const _cellarArmLvl3 = (props) => i.foundAtCellar(i.armor(i.lvl3(i.rarityCommon(i.item(props)))));
+const _cellarArmLvl4 = (props) => i.foundAtCellar(i.armor(i.lvl4(i.rarityCommon(i.item(props)))));
+const _cellarArmLvl5 = (props) => i.foundAtCellar(i.armor(i.lvl5(i.rarityCommon(i.item(props)))));
 const _scienceArmLvl1 = (props) => i.foundAtScience(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _scienceArmLvl2 = (props) => i.foundAtScience(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _scienceArmLvl3 = (props) => i.foundAtScience(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _scienceArmLvl4 = (props) => i.foundAtScience(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _scienceArmLvl5 = (props) => i.foundAtScience(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
+const _scienceArmLvl2 = (props) => i.foundAtScience(i.armor(i.lvl2(i.rarityCommon(i.item(props)))));
+const _scienceArmLvl3 = (props) => i.foundAtScience(i.armor(i.lvl3(i.rarityCommon(i.item(props)))));
+const _scienceArmLvl4 = (props) => i.foundAtScience(i.armor(i.lvl4(i.rarityCommon(i.item(props)))));
+const _scienceArmLvl5 = (props) => i.foundAtScience(i.armor(i.lvl5(i.rarityCommon(i.item(props)))));
 const _thievesArmLvl1 = (props) => i.foundAtThieves(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _thievesArmLvl2 = (props) => i.foundAtThieves(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _thievesArmLvl3 = (props) => i.foundAtThieves(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _thievesArmLvl4 = (props) => i.foundAtThieves(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
-const _thievesArmLvl5 = (props) => i.foundAtThieves(i.armor(i.lvl1(i.rarityCommon(i.item(props)))));
+const _thievesArmLvl2 = (props) => i.foundAtThieves(i.armor(i.lvl2(i.rarityCommon(i.item(props)))));
+const _thievesArmLvl3 = (props) => i.foundAtThieves(i.armor(i.lvl3(i.rarityCommon(i.item(props)))));
+const _thievesArmLvl4 = (props) => i.foundAtThieves(i.armor(i.lvl4(i.rarityCommon(i.item(props)))));
+const _thievesArmLvl5 = (props) => i.foundAtThieves(i.armor(i.lvl5(i.rarityCommon(i.item(props)))));
 
 // accessories
 const _treasuryAccLvl1 = (props) => i.foundAtTreasury(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _treasuryAccLvl2 = (props) => i.foundAtTreasury(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _treasuryAccLvl3 = (props) => i.foundAtTreasury(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _treasuryAccLvl4 = (props) => i.foundAtTreasury(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _treasuryAccLvl5 = (props) => i.foundAtTreasury(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
+const _treasuryAccLvl2 = (props) => i.foundAtTreasury(i.accessory(i.lvl2(i.rarityCommon(i.item(props)))));
+const _treasuryAccLvl3 = (props) => i.foundAtTreasury(i.accessory(i.lvl3(i.rarityCommon(i.item(props)))));
+const _treasuryAccLvl4 = (props) => i.foundAtTreasury(i.accessory(i.lvl4(i.rarityCommon(i.item(props)))));
+const _treasuryAccLvl5 = (props) => i.foundAtTreasury(i.accessory(i.lvl5(i.rarityCommon(i.item(props)))));
 const _armoryAccLvl1 = (props) => i.foundAtArmory(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _armoryAccLvl2 = (props) => i.foundAtArmory(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _armoryAccLvl3 = (props) => i.foundAtArmory(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _armoryAccLvl4 = (props) => i.foundAtArmory(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _armoryAccLvl5 = (props) => i.foundAtArmory(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
+const _armoryAccLvl2 = (props) => i.foundAtArmory(i.accessory(i.lvl2(i.rarityCommon(i.item(props)))));
+const _armoryAccLvl3 = (props) => i.foundAtArmory(i.accessory(i.lvl3(i.rarityCommon(i.item(props)))));
+const _armoryAccLvl4 = (props) => i.foundAtArmory(i.accessory(i.lvl4(i.rarityCommon(i.item(props)))));
+const _armoryAccLvl5 = (props) => i.foundAtArmory(i.accessory(i.lvl5(i.rarityCommon(i.item(props)))));
 const _cellarAccLvl1 = (props) => i.foundAtCellar(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _cellarAccLvl2 = (props) => i.foundAtCellar(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _cellarAccLvl3 = (props) => i.foundAtCellar(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _cellarAccLvl4 = (props) => i.foundAtCellar(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _cellarAccLvl5 = (props) => i.foundAtCellar(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
+const _cellarAccLvl2 = (props) => i.foundAtCellar(i.accessory(i.lvl2(i.rarityCommon(i.item(props)))));
+const _cellarAccLvl3 = (props) => i.foundAtCellar(i.accessory(i.lvl3(i.rarityCommon(i.item(props)))));
+const _cellarAccLvl4 = (props) => i.foundAtCellar(i.accessory(i.lvl4(i.rarityCommon(i.item(props)))));
+const _cellarAccLvl5 = (props) => i.foundAtCellar(i.accessory(i.lvl5(i.rarityCommon(i.item(props)))));
 const _scienceAccLvl1 = (props) => i.foundAtScience(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _scienceAccLvl2 = (props) => i.foundAtScience(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _scienceAccLvl3 = (props) => i.foundAtScience(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _scienceAccLvl4 = (props) => i.foundAtScience(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _scienceAccLvl5 = (props) => i.foundAtScience(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
+const _scienceAccLvl2 = (props) => i.foundAtScience(i.accessory(i.lvl2(i.rarityCommon(i.item(props)))));
+const _scienceAccLvl3 = (props) => i.foundAtScience(i.accessory(i.lvl3(i.rarityCommon(i.item(props)))));
+const _scienceAccLvl4 = (props) => i.foundAtScience(i.accessory(i.lvl4(i.rarityCommon(i.item(props)))));
+const _scienceAccLvl5 = (props) => i.foundAtScience(i.accessory(i.lvl5(i.rarityCommon(i.item(props)))));
 const _thievesAccLvl1 = (props) => i.foundAtThieves(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _thievesAccLvl2 = (props) => i.foundAtThieves(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _thievesAccLvl3 = (props) => i.foundAtThieves(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
-const _thievesAccLvl4 = (props) => i.foundAtThieves(i.accessory(i.lvl1(i.rarityCommon(i.item(props))Acc;
-const _thievesAccLvl5 = (props) => i.foundAtThieves(i.accessory(i.lvl1(i.rarityCommon(i.item(props)))));
+const _thievesAccLvl2 = (props) => i.foundAtThieves(i.accessory(i.lvl2(i.rarityCommon(i.item(props)))));
+const _thievesAccLvl3 = (props) => i.foundAtThieves(i.accessory(i.lvl3(i.rarityCommon(i.item(props)))));
+const _thievesAccLvl4 = (props) => i.foundAtThieves(i.accessory(i.lvl4(i.rarityCommon(i.item(props)))));
+const _thievesAccLvl5 = (props) => i.foundAtThieves(i.accessory(i.lvl5(i.rarityCommon(i.item(props)))));
 
 export const goldDagger = _treasuryWpnLvl1({
   label: Strings.weapons.goldDagger,
@@ -116,7 +116,6 @@ export const ironShortSword = _armoryWpnLvl1({
 });
 
 export const brittleRapier = _armoryWpnLvl2({
-  {
     label: Strings.weapons.brittleRapier,
     code: 'brittleRapier',
     description: Strings.weapons.brittleRapierDesc,
@@ -130,7 +129,6 @@ export const brittleRapier = _armoryWpnLvl2({
       sec.critPlus(50),
       sec.weapBreak(4)
     ],
-  },
 });
 
 export const goldSaber = _thievesWpnLvl3({
@@ -576,6 +574,3 @@ export const goldSack = _treasuryAccLvl5({
     sec.rarePlus(5)
   ],
 });
-
-
-export default Items;

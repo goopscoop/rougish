@@ -4,7 +4,7 @@ import R from 'ramda';
 import GenerateCost from '../shared/GenerateCost';
 import ItemDetails from './ItemDetails';
 import Strings from '../utils/strings';
-import Items from '../utils/items';
+import * as shopItems from '../utils/shopItems';
 import {connect} from 'react-redux';
 import {
   toggleUpgradesModal,
@@ -13,15 +13,16 @@ import {
   selectItem
 } from './shopModule';
 import ShinyPurse from './assets/ShinyPurse';
+import Coins from '../assets/icons/blackOnTransparent/Coins';
 
-const UpgradesModal = ({
+const ItemShopModal = ({
   toggleUpgradesModal,
   purchaseUpgrade,
   purchaseItem,
   selectItem,
   isUpgradesModalOpen,
   whichImprovementIsOpen,
-  improvements
+  improvements,
 }) => {
 
   // if modal is open, determin which improvement 
@@ -69,16 +70,17 @@ const UpgradesModal = ({
   const renderItemsList = () => {
     const {currentLvl} = improvement;
 
+    console.log(shopItems)
     const itemIsAvailable = (foundAt, lvl) => {
+      console.log(currentLvl)
       return foundAt.includes(whichImprovementIsOpen) &&
         (lvl <= currentLvl);
     };
 
-    return Items.map((item, i) => {
+    // converts the shopItems obj to an arr of the obj values
+    // then maps over them
+    return Object.values(shopItems).map((item, i) => {
       const { lvl, cost, label, foundAt, } = item;
-      // const handleBuyClick = () => {
-      //   purchaseItem(item);
-      // }
 
       const handleInspect = () => {
         selectItem(item)
@@ -94,6 +96,10 @@ const UpgradesModal = ({
         );
       }
     }); 
+  }
+
+  const handleBuyClick = () => {
+    purchaseItem()
   }
 
   return (
@@ -122,10 +128,20 @@ const UpgradesModal = ({
           <ItemDetails />
         </div>
         <div className='six columns'>
+          <div className='row item-shop-item-list'>
           {
             isUpgradesModalOpen &&
               renderItemsList()
           }
+          </div>
+          <div className='row'>
+            <button 
+              className='item-shop-buy-button'
+              onClick={handleBuyClick}
+            >
+              <Coins height='25px' width='25px' /> BUY
+            </button>
+          </div>
         </div>
       </div>
     </Modal>
@@ -142,6 +158,6 @@ export default connect(
     toggleUpgradesModal,
     purchaseUpgrade,
     purchaseItem,
-    selectItem
+    selectItem,
   }
-)(UpgradesModal);
+)(ItemShopModal);

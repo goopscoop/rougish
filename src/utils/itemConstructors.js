@@ -1,4 +1,15 @@
-export const item = ({label, code, description, foundAt, cost, stats, effects, rarity, lvl, type}) => ({
+export const item = ({
+  label = '',
+  code = '',
+  description = '',
+  foundAt = [],
+  cost = {},
+  stats = {},
+  effects = [],
+  rarity = '',
+  lvl = 0,
+  type = ''
+}) => ({
   label, code, description, foundAt, cost, stats, effects, rarity, lvl, type
 });
 

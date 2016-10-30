@@ -52,16 +52,19 @@ const _checkResourcesAndPurchase = (dispatch, cost, resources) => {
   }
 };
 
-export const purchaseItem = item => {
+export const purchaseItem = () => {
   return (dispatch, getState) => {
     const {
       user: {
         resources
+      },
+      shop: {
+        selectedItem
       }
     } = getState();
 
-    _checkResourcesAndPurchase(dispatch, item.cost, resources)
-      .then(() => dispatch(addItemToInventory(item)));
+    _checkResourcesAndPurchase(dispatch, selectedItem.cost, resources)
+      .then(() => dispatch(addItemToInventory(selectedItem)));
   }
 }
 

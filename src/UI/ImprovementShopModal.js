@@ -8,7 +8,7 @@ import {
 import GenerateCost from '../shared/GenerateCost';
 import './styles/shop.css';
 
-const Shop = ({
+const ImprovementsShopModal = ({
   isShopModalOpen,
   toggleShopModal,
   improvementsList,
@@ -64,4 +64,4 @@ export default connect(
     toggleShopModal,
     purchaseImprovement
   }
-)(Shop);
+)(ImprovementsShopModal);

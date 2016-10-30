@@ -8,6 +8,17 @@
   padding: 5px 0;
 }
 
+.item-shop-item-list {
+  min-height: 150px;
+}
+
+.item-shop-buy-button {
+  height: 45px;
+  padding-top: 9px;
+  font-size: 25px;
+  margin-left: 90px;
+}
+
 .right {
   float: right;
 }
