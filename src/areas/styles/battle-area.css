@@ -1,0 +1,62 @@
+#battle-area {
+  background-color: teal;
+  height: 100vh;
+  width: 100%;
+}
+
+.battle-area-character {
+  position: absolute;
+}
+
+.battle-area-character:nth-child(-n+3) {
+  left: 100px;
+}
+
+.battle-area-character:first-child {
+  top: 70px;
+}
+
+.battle-area-character:nth-child(2) {
+  top: 170px;
+}
+
+.battle-area-character:nth-child(3) {
+  top: 270px;
+}
+
+.battle-area-character:nth-child(4) {
+  top: 120px;
+  left: 20px;
+}
+
+.battle-area-character:nth-child(5) {
+  top: 220px;
+  left: 20px;
+}
+
+.battle-area-enemy {
+  position: absolute;
+}
+
+.battle-area-enemy:first-child {
+  top: 70px;
+}
+
+.battle-area-enemy:nth-child(2) {
+  top: 170px;
+}
+
+.battle-area-enemy:nth-child(3) {
+  top: 270px;
+}
+
+.battle-area-enemy:nth-child(4) {
+  top: 120px;
+  left: 200px;
+}
+
+.battle-area-enemy:nth-child(5) {
+  top: 220px;
+  left: 200px;
+}
+

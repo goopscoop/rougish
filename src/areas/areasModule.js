@@ -4,6 +4,7 @@ const CHANGE_AREA = '@areas/CHANGE_AREA';
 
 export const MAIN_MAP = '@areas/MAIN_MAP';
 export const BASE = '@areas/BASE';
+export const BATTLE_AREA = '@areas/BATTLE_AREA';
 
 export const changeArea = (newArea) => ({
   type: CHANGE_AREA,

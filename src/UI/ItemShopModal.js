@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
 import R from 'ramda';
-import GenerateCost from '../shared/GenerateCost';
 import ItemDetails from './ItemDetails';
 import Strings from '../utils/strings';
 import * as shopItems from '../utils/shopItems';
@@ -80,7 +79,7 @@ const ItemShopModal = ({
     // converts the shopItems obj to an arr of the obj values
     // then maps over them
     return Object.values(shopItems).map((item, i) => {
-      const { lvl, cost, label, foundAt, } = item;
+      const { lvl, label, foundAt, } = item;
 
       const handleInspect = () => {
         selectItem(item)
@@ -95,6 +94,8 @@ const ItemShopModal = ({
           </div>
         );
       }
+      
+      return false;
     }); 
   }
 

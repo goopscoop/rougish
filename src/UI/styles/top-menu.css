@@ -1,4 +1,11 @@
 #top-menu {
   height: 40px;
   width: 100%;
+  background: white;
+}
+
+.top-menu-party-button {
+  position: absolute;
+  right: 4px;
+  top: 4px;
 }

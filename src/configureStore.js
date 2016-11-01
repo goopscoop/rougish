@@ -8,9 +8,13 @@ import areas from './areas/areasModule';
 import shop from './UI/shopModule';
 import notifications from './UI/notificationsModule';
 import user from './user/userModule';
+import chars from './chars/charsModule';
+import battle from './battle/battleModule';
 
 const rootReducer = combineReducers({
   areas,
+  chars,
+  battle,
   shop,
   user,
   notifications
