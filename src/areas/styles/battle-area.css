@@ -8,28 +8,28 @@
   position: absolute;
 }
 
-.battle-area-character:nth-child(-n+3) {
+.battle-area-pc-0 {
   left: 100px;
-}
-
-.battle-area-character:first-child {
   top: 70px;
 }
 
-.battle-area-character:nth-child(2) {
+
+.battle-area-pc-1 {
   top: 170px;
+  left: 100px;
 }
 
-.battle-area-character:nth-child(3) {
+.battle-area-pc-2 {
   top: 270px;
+  left: 100px;
 }
 
-.battle-area-character:nth-child(4) {
+.battle-area-pc-3 {
   top: 120px;
   left: 20px;
 }
 
-.battle-area-character:nth-child(5) {
+.battle-area-pc-4 {
   top: 220px;
   left: 20px;
 }
@@ -38,25 +38,34 @@
   position: absolute;
 }
 
-.battle-area-enemy:first-child {
+.battle-area-enemy-0 {
   top: 70px;
+  left: 200px;
 }
 
-.battle-area-enemy:nth-child(2) {
+.battle-area-enemy-1 {
   top: 170px;
+  left: 200px;
 }
 
-.battle-area-enemy:nth-child(3) {
+.battle-area-enemy-2 {
   top: 270px;
+  left: 200px;
 }
 
-.battle-area-enemy:nth-child(4) {
+.battle-area-enemy-3 {
   top: 120px;
-  left: 200px;
+  left: 280px;
 }
 
-.battle-area-enemy:nth-child(5) {
+.battle-area-enemy-4 {
   top: 220px;
-  left: 200px;
+  left: 280px;
 }
 
+.battle-area-active-indicator {
+  position: absolute;
+  z-index: 100;
+  left: 0px;
+  top: 0px;
+}

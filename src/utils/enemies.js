@@ -25,5 +25,6 @@ export const ghost = enemy => ({
     MNTL: 1,
     FRT: 1,
     LCK: 2
-  }
+  },
+  isPlayer: false
 })

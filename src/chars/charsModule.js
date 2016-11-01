@@ -1,13 +1,14 @@
 import * as c from '../utils/characterConstructors';
 
-const jo = c.scuttler(c.character({
-  name: 'Jo',
+const createJoe = () => c.scuttler(c.character({
+  name: 'Joe',
   hp: 20
-}))
+}));
+
 
 const initialState = {
-  allPCs: [jo],
-  activePCs: [jo, jo, jo, jo, jo]
+  allPCs: [createJoe()],
+  activePCs: [createJoe(), createJoe(), createJoe(), createJoe(), createJoe()]
 };
 
 export default function(state = initialState, action) {

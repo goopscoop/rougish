@@ -1,18 +1,53 @@
+
 export const character = ({
   name = '',
-  code = '',
   description = '',
   foundAt = [],
-  primaryStats = {},
+  primaryStats = {
+    STR: 1,
+    MNTL: 1,
+    FRT: 1,
+    LCK: 1
+  },
+  secondaryStats,
   abilities = [],
   effects = [],
   lvl = 0,
   type = '',
   hp = 0,
-  hasDied = false
-}) => ({
-  name, code, description, foundAt, primaryStats, abilities, effects, lvl, type, hp, hasDied
-});
+  hasDied = false,
+  isPlayer = true
+}) => {
+  const generateCode = () => {
+    return `${name[0]}${name[1]}${name[2]}${Math.random()}`;
+  };
+
+  const generateSecondaryStates = () => {
+    let initiative = primaryStats.STR + primaryStats.FRT + (primaryStats.LCK / 2)
+    if (isPlayer){
+      initiative += 1;
+    }
+
+    return {
+      initiative
+    };
+  };
+
+  return {
+    name,
+    code: generateCode(),
+    description,
+    foundAt,
+    primaryStats,
+    abilities,
+    effects,
+    lvl,
+    type,
+    hp,
+    hasDied,
+    secondaryStats: generateSecondaryStates()
+  } 
+};
 
 // Character classes
 // 
