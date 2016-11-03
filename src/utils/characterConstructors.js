@@ -16,7 +16,8 @@ export const character = ({
   type = '',
   hp = 0,
   hasDied = false,
-  isPlayer = true
+  isPlayer = true,
+  imgName = ''
 }) => {
   const generateCode = () => {
     return `${name[0]}${name[1]}${name[2]}${Math.random()}`;
@@ -45,7 +46,8 @@ export const character = ({
     type,
     hp,
     hasDied,
-    secondaryStats: generateSecondaryStates()
+    secondaryStats: generateSecondaryStates(),
+    imgName
   } 
 };
 

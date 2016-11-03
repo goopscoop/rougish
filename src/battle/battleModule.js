@@ -7,7 +7,7 @@ const ENEMY = '@battle/ENEMY';
 const GENERATE_BATTLE_ORDER = '@battle/GENERATE_BATTLE_ORDER';
 const NEXT_TURN = '@battle/NEXT_TURN';
 
-const impy = () => e.ghost(character({name: 'impy'}))
+const impy = () => e.ghost(character({name: 'impy', imgName: 'Ghost'}));
 
 export const generateBattleOrder = () => {
   return (dispatch, getState) => {

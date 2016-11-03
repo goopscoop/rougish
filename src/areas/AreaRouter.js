@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import { MAIN_MAP, BASE, BATTLE_AREA } from './areasModule';
 import MainMap from './MainMap';
 import Base from './Base';
-import BattleArea from './BattleArea';
+import BattleArea from '../battle/BattleArea';
 
 const AreaRouter = ({ currentArea }) => {
   const renderWhichArea = () => {

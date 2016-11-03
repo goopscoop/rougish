@@ -2,7 +2,8 @@ import * as c from '../utils/characterConstructors';
 
 const createJoe = () => c.scuttler(c.character({
   name: 'Joe',
-  hp: 20
+  hp: 20,
+  imgName: 'Swordman'
 }));
 
 
